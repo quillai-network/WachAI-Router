@@ -1,14 +1,14 @@
 # WachAI-Router
 
-> An intelligent verification cluster router that routes blockchain verification and audit jobs to specialized sub-agents based on job requirements and agent capabilities.
+> An intelligent verification cluster router that routes verification jobs to specialized sub-agents based on job requirements and agent capabilities.
 
 ## Overview
 
-WachAI-Router is the main orchestration agent for the **Verification Cluster** in the WachAI ecosystem. It acts as a smart router that receives verification and audit job requests through the ACP (Agent Communication Protocol) and intelligently routes them to specialized sub-agents within its cluster. The router selects agents that deliver the highest quality for each specific job type and match the job criteria.
+WachAI-Router is the main orchestration agent for the **Verification Cluster** in the WachAI ecosystem. It acts as a smart router that receives verification job requests through the ACP (Agent Communication Protocol) and intelligently routes them to specialized sub-agents within its cluster. The router selects agents that deliver the highest quality for each specific job type and match the job criteria.
 
 ### Key Features
 
-- **Intelligent Job Classification**: Uses AI to analyze job requirements and determine the appropriate service type
+- **Intelligent Job Classification**: verification categories help determine the appropriate service type
 - **Automatic Routing**: Routes jobs to specialized sub-agents based on service requirements
 - **Job State Management**: Tracks job progress through all phases using Redis persistence
 - **Dual Role Operation**: Functions as both provider (receiving jobs) and consumer (routing to sub-agents)
@@ -44,20 +44,17 @@ WachAI-Router is the main orchestration agent for the **Verification Cluster** i
 └─────────┘  └──────────────┘
 ```
 
-### Sub-Agent Cluster
+### Sub-Agent Clusters
 
-The router manages connections to the following specialized agents:
+WachAI router can support multiple sub agents for each job category. Currently, the router manages connections to the following specialized agents:
 
-- **Sentry:wachAI** - Smart contract security auditing
-- **TokenSense:wachAI** - Contract verification and due diligence
+- **Sentry:wachAI** - Smart contract verification
+- **TokenSense:wachAI** - Token verification
 
 ## How It Works
 
 1. **Job Reception**: Router receives a job request via ACP with service requirements
-2. **Classification**: AI analyzes the request and classifies it as either:
-   - `audit_contract` - Security audits and code review
-   - `verify_contract` - Contract verification and due diligence
-   - `null` - Job doesn't match any offering (rejected)
+2. **Classification**: AI analyzes the request and classifies it.
 3. **Routing**: Job is routed to the appropriate sub-agent in the cluster
 4. **Tracking**: Router tracks both the original job and routed job through all phases
 5. **Delivery**: Once sub-agent completes work, router delivers results back to original client
@@ -149,18 +146,6 @@ npm run test:acp-buyer    # Buyer role tests
 npm run test:hybrid       # Hybrid agent tests
 ```
 
-## Job Classification Examples
-
-The router uses AI to classify incoming jobs:
-
-| Client Request | Classification | Routed To |
-|---------------|----------------|-----------|
-| "Audit this smart contract for security vulnerabilities" | `audit_contract` | Sentry:wachAI |
-| "Verify this token contract is legitimate" | `verify_contract` | TokenSense:wachAI |
-| "Due diligence check on contract" | `verify_contract` | TokenSense:wachAI |
-| "Security review of smart contract code" | `audit_contract` | Sentry:wachAI |
-| "Help me with my homework" | `null` | Rejected |
-
 ## Redis Data Structure
 
 ### Job Stages
@@ -176,11 +161,6 @@ The router uses AI to classify incoming jobs:
   delivered_work: boolean;
 }
 ```
-
-### Job Mappings
-- **Key Pattern**: `jobMapping:{originalJobId}:{routedJobId}`
-- **TTL**: 7 days
-- **Set Key**: `jobMappings` (tracks all active mappings)
 
 ## API Reference
 
