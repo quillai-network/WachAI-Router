@@ -74,7 +74,7 @@ async function test() {
           console.log(`Processing job ${job.id} in phase: ${AcpJobPhases[job.phase]}`);
 
           // skip some pending jobs
-          if ([19215, 19211, 13982, 82030, 82430, 82428,82424].includes(job.id)) {
+          if ([19215, 19211, 13982, 82030, 82430].includes(job.id)) {
             console.log(`Skipping job ${job.id} as it is pending`);
             continue;
           }

@@ -2,7 +2,7 @@
   "name": "wachai-router-agent",
   "version": "0.0.1",
   "description": "Hybrid agent to manage acp transactions",
-  "main": "index.js",
+  "main": "agent.js",
   "scripts": {
     "dev": "nodemon --ignore test src/agent.ts",
     "test:acp": "npx ts-node test/acp.test.ts",
