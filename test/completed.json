@@ -1,0 +1,1664 @@
+{
+    "acpClient": {
+        "acpContractClient": {
+            "walletPrivateKey": "0x30eb504841d3c14db387bc5c7f49e0b746ee1e19c8ac536b2b54c08169b781a3",
+            "sessionEntityKeyId": 2,
+            "agentWalletAddress": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+            "config": {
+                "chain": {
+                    "formatters": {
+                        "block": {
+                            "type": "block"
+                        },
+                        "transaction": {
+                            "type": "transaction"
+                        },
+                        "transactionReceipt": {
+                            "type": "transactionReceipt"
+                        }
+                    },
+                    "serializers": {},
+                    "contracts": {
+                        "gasPriceOracle": {
+                            "address": "0x420000000000000000000000000000000000000F"
+                        },
+                        "l1Block": {
+                            "address": "0x4200000000000000000000000000000000000015"
+                        },
+                        "l2CrossDomainMessenger": {
+                            "address": "0x4200000000000000000000000000000000000007"
+                        },
+                        "l2Erc721Bridge": {
+                            "address": "0x4200000000000000000000000000000000000014"
+                        },
+                        "l2StandardBridge": {
+                            "address": "0x4200000000000000000000000000000000000010"
+                        },
+                        "l2ToL1MessagePasser": {
+                            "address": "0x4200000000000000000000000000000000000016"
+                        },
+                        "disputeGameFactory": {
+                            "1": {
+                                "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                            }
+                        },
+                        "l2OutputOracle": {
+                            "1": {
+                                "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                            }
+                        },
+                        "multicall3": {
+                            "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                            "blockCreated": 5022
+                        },
+                        "portal": {
+                            "1": {
+                                "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                "blockCreated": 17482143
+                            }
+                        },
+                        "l1StandardBridge": {
+                            "1": {
+                                "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                "blockCreated": 17482143
+                            }
+                        }
+                    },
+                    "id": 8453,
+                    "name": "Base",
+                    "nativeCurrency": {
+                        "name": "Ether",
+                        "symbol": "ETH",
+                        "decimals": 18
+                    },
+                    "rpcUrls": {
+                        "default": {
+                            "http": [
+                                "https://mainnet.base.org"
+                            ]
+                        },
+                        "alchemy": {
+                            "http": [
+                                "https://base-mainnet.g.alchemy.com/v2"
+                            ]
+                        }
+                    },
+                    "blockExplorers": {
+                        "default": {
+                            "name": "Basescan",
+                            "url": "https://basescan.org",
+                            "apiUrl": "https://api.basescan.org/api"
+                        }
+                    },
+                    "sourceId": 1
+                },
+                "contractAddress": "0x6a1FE26D54ab0d3E1e3168f2e0c0cDa5cC0A0A4A",
+                "baseFare": {
+                    "contractAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+                    "decimals": 6
+                },
+                "alchemyRpcUrl": "https://alchemy-proxy-prod.virtuals.io/api/proxy/rpc",
+                "acpUrl": "https://acpx.virtuals.io"
+            },
+            "MAX_RETRIES": 3,
+            "PRIORITY_FEE_MULTIPLIER": 2,
+            "MAX_FEE_PER_GAS": 20000000,
+            "MAX_PRIORITY_FEE_PER_GAS": 21000000,
+            "chain": {
+                "formatters": {
+                    "block": {
+                        "type": "block"
+                    },
+                    "transaction": {
+                        "type": "transaction"
+                    },
+                    "transactionReceipt": {
+                        "type": "transactionReceipt"
+                    }
+                },
+                "serializers": {},
+                "contracts": {
+                    "gasPriceOracle": {
+                        "address": "0x420000000000000000000000000000000000000F"
+                    },
+                    "l1Block": {
+                        "address": "0x4200000000000000000000000000000000000015"
+                    },
+                    "l2CrossDomainMessenger": {
+                        "address": "0x4200000000000000000000000000000000000007"
+                    },
+                    "l2Erc721Bridge": {
+                        "address": "0x4200000000000000000000000000000000000014"
+                    },
+                    "l2StandardBridge": {
+                        "address": "0x4200000000000000000000000000000000000010"
+                    },
+                    "l2ToL1MessagePasser": {
+                        "address": "0x4200000000000000000000000000000000000016"
+                    },
+                    "disputeGameFactory": {
+                        "1": {
+                            "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                        }
+                    },
+                    "l2OutputOracle": {
+                        "1": {
+                            "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                        }
+                    },
+                    "multicall3": {
+                        "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                        "blockCreated": 5022
+                    },
+                    "portal": {
+                        "1": {
+                            "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                            "blockCreated": 17482143
+                        }
+                    },
+                    "l1StandardBridge": {
+                        "1": {
+                            "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                            "blockCreated": 17482143
+                        }
+                    }
+                },
+                "id": 8453,
+                "name": "Base",
+                "nativeCurrency": {
+                    "name": "Ether",
+                    "symbol": "ETH",
+                    "decimals": 18
+                },
+                "rpcUrls": {
+                    "default": {
+                        "http": [
+                            "https://mainnet.base.org"
+                        ]
+                    },
+                    "alchemy": {
+                        "http": [
+                            "https://base-mainnet.g.alchemy.com/v2"
+                        ]
+                    }
+                },
+                "blockExplorers": {
+                    "default": {
+                        "name": "Basescan",
+                        "url": "https://basescan.org",
+                        "apiUrl": "https://api.basescan.org/api"
+                    }
+                },
+                "sourceId": 1
+            },
+            "contractAddress": "0x6a1FE26D54ab0d3E1e3168f2e0c0cDa5cC0A0A4A",
+            "_sessionKeyClient": {
+                "account": {
+                    "address": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+                    "source": "ModularAccountV2",
+                    "type": "local",
+                    "signerEntity": {
+                        "entityId": 2,
+                        "isGlobalValidation": true
+                    }
+                },
+                "cacheTime": 4000,
+                "chain": {
+                    "formatters": {
+                        "block": {
+                            "type": "block"
+                        },
+                        "transaction": {
+                            "type": "transaction"
+                        },
+                        "transactionReceipt": {
+                            "type": "transactionReceipt"
+                        }
+                    },
+                    "serializers": {},
+                    "contracts": {
+                        "gasPriceOracle": {
+                            "address": "0x420000000000000000000000000000000000000F"
+                        },
+                        "l1Block": {
+                            "address": "0x4200000000000000000000000000000000000015"
+                        },
+                        "l2CrossDomainMessenger": {
+                            "address": "0x4200000000000000000000000000000000000007"
+                        },
+                        "l2Erc721Bridge": {
+                            "address": "0x4200000000000000000000000000000000000014"
+                        },
+                        "l2StandardBridge": {
+                            "address": "0x4200000000000000000000000000000000000010"
+                        },
+                        "l2ToL1MessagePasser": {
+                            "address": "0x4200000000000000000000000000000000000016"
+                        },
+                        "disputeGameFactory": {
+                            "1": {
+                                "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                            }
+                        },
+                        "l2OutputOracle": {
+                            "1": {
+                                "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                            }
+                        },
+                        "multicall3": {
+                            "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                            "blockCreated": 5022
+                        },
+                        "portal": {
+                            "1": {
+                                "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                "blockCreated": 17482143
+                            }
+                        },
+                        "l1StandardBridge": {
+                            "1": {
+                                "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                "blockCreated": 17482143
+                            }
+                        }
+                    },
+                    "id": 8453,
+                    "name": "Base",
+                    "nativeCurrency": {
+                        "name": "Ether",
+                        "symbol": "ETH",
+                        "decimals": 18
+                    },
+                    "rpcUrls": {
+                        "default": {
+                            "http": [
+                                "https://mainnet.base.org"
+                            ]
+                        },
+                        "alchemy": {
+                            "http": [
+                                "https://base-mainnet.g.alchemy.com/v2"
+                            ]
+                        }
+                    },
+                    "blockExplorers": {
+                        "default": {
+                            "name": "Basescan",
+                            "url": "https://basescan.org",
+                            "apiUrl": "https://api.basescan.org/api"
+                        }
+                    },
+                    "sourceId": 1
+                },
+                "key": "account",
+                "name": "account provider",
+                "pollingInterval": 4000,
+                "transport": {
+                    "key": "custom",
+                    "name": "Custom Provider",
+                    "retryCount": 3,
+                    "retryDelay": 150,
+                    "type": "custom"
+                },
+                "type": "SmartAccountClient",
+                "uid": "0854f834957",
+                "txMaxRetries": 5,
+                "txRetryIntervalMs": 2000,
+                "txRetryMultiplier": 1.5,
+                "feeOptions": {
+                    "maxFeePerGas": {
+                        "multiplier": 1.5
+                    },
+                    "maxPriorityFeePerGas": {
+                        "multiplier": 1.05
+                    }
+                },
+                "middleware": {}
+            }
+        },
+        "acpUrl": "https://acpx.virtuals.io"
+    },
+    "id": 82081,
+    "clientAddress": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+    "providerAddress": "0x5ABD4e9561095B9Dd21EcbF6e718f073966C06fC",
+    "evaluatorAddress": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+    "price": 0.01,
+    "priceTokenAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "memos": [
+        {
+            "acpClient": {
+                "acpContractClient": {
+                    "walletPrivateKey": "0x30eb504841d3c14db387bc5c7f49e0b746ee1e19c8ac536b2b54c08169b781a3",
+                    "sessionEntityKeyId": 2,
+                    "agentWalletAddress": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+                    "config": {
+                        "chain": {
+                            "formatters": {
+                                "block": {
+                                    "type": "block"
+                                },
+                                "transaction": {
+                                    "type": "transaction"
+                                },
+                                "transactionReceipt": {
+                                    "type": "transactionReceipt"
+                                }
+                            },
+                            "serializers": {},
+                            "contracts": {
+                                "gasPriceOracle": {
+                                    "address": "0x420000000000000000000000000000000000000F"
+                                },
+                                "l1Block": {
+                                    "address": "0x4200000000000000000000000000000000000015"
+                                },
+                                "l2CrossDomainMessenger": {
+                                    "address": "0x4200000000000000000000000000000000000007"
+                                },
+                                "l2Erc721Bridge": {
+                                    "address": "0x4200000000000000000000000000000000000014"
+                                },
+                                "l2StandardBridge": {
+                                    "address": "0x4200000000000000000000000000000000000010"
+                                },
+                                "l2ToL1MessagePasser": {
+                                    "address": "0x4200000000000000000000000000000000000016"
+                                },
+                                "disputeGameFactory": {
+                                    "1": {
+                                        "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                    }
+                                },
+                                "l2OutputOracle": {
+                                    "1": {
+                                        "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                    }
+                                },
+                                "multicall3": {
+                                    "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                    "blockCreated": 5022
+                                },
+                                "portal": {
+                                    "1": {
+                                        "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                        "blockCreated": 17482143
+                                    }
+                                },
+                                "l1StandardBridge": {
+                                    "1": {
+                                        "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                        "blockCreated": 17482143
+                                    }
+                                }
+                            },
+                            "id": 8453,
+                            "name": "Base",
+                            "nativeCurrency": {
+                                "name": "Ether",
+                                "symbol": "ETH",
+                                "decimals": 18
+                            },
+                            "rpcUrls": {
+                                "default": {
+                                    "http": [
+                                        "https://mainnet.base.org"
+                                    ]
+                                },
+                                "alchemy": {
+                                    "http": [
+                                        "https://base-mainnet.g.alchemy.com/v2"
+                                    ]
+                                }
+                            },
+                            "blockExplorers": {
+                                "default": {
+                                    "name": "Basescan",
+                                    "url": "https://basescan.org",
+                                    "apiUrl": "https://api.basescan.org/api"
+                                }
+                            },
+                            "sourceId": 1
+                        },
+                        "contractAddress": "0x6a1FE26D54ab0d3E1e3168f2e0c0cDa5cC0A0A4A",
+                        "baseFare": {
+                            "contractAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+                            "decimals": 6
+                        },
+                        "alchemyRpcUrl": "https://alchemy-proxy-prod.virtuals.io/api/proxy/rpc",
+                        "acpUrl": "https://acpx.virtuals.io"
+                    },
+                    "MAX_RETRIES": 3,
+                    "PRIORITY_FEE_MULTIPLIER": 2,
+                    "MAX_FEE_PER_GAS": 20000000,
+                    "MAX_PRIORITY_FEE_PER_GAS": 21000000,
+                    "chain": {
+                        "formatters": {
+                            "block": {
+                                "type": "block"
+                            },
+                            "transaction": {
+                                "type": "transaction"
+                            },
+                            "transactionReceipt": {
+                                "type": "transactionReceipt"
+                            }
+                        },
+                        "serializers": {},
+                        "contracts": {
+                            "gasPriceOracle": {
+                                "address": "0x420000000000000000000000000000000000000F"
+                            },
+                            "l1Block": {
+                                "address": "0x4200000000000000000000000000000000000015"
+                            },
+                            "l2CrossDomainMessenger": {
+                                "address": "0x4200000000000000000000000000000000000007"
+                            },
+                            "l2Erc721Bridge": {
+                                "address": "0x4200000000000000000000000000000000000014"
+                            },
+                            "l2StandardBridge": {
+                                "address": "0x4200000000000000000000000000000000000010"
+                            },
+                            "l2ToL1MessagePasser": {
+                                "address": "0x4200000000000000000000000000000000000016"
+                            },
+                            "disputeGameFactory": {
+                                "1": {
+                                    "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                }
+                            },
+                            "l2OutputOracle": {
+                                "1": {
+                                    "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                }
+                            },
+                            "multicall3": {
+                                "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                "blockCreated": 5022
+                            },
+                            "portal": {
+                                "1": {
+                                    "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                    "blockCreated": 17482143
+                                }
+                            },
+                            "l1StandardBridge": {
+                                "1": {
+                                    "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                    "blockCreated": 17482143
+                                }
+                            }
+                        },
+                        "id": 8453,
+                        "name": "Base",
+                        "nativeCurrency": {
+                            "name": "Ether",
+                            "symbol": "ETH",
+                            "decimals": 18
+                        },
+                        "rpcUrls": {
+                            "default": {
+                                "http": [
+                                    "https://mainnet.base.org"
+                                ]
+                            },
+                            "alchemy": {
+                                "http": [
+                                    "https://base-mainnet.g.alchemy.com/v2"
+                                ]
+                            }
+                        },
+                        "blockExplorers": {
+                            "default": {
+                                "name": "Basescan",
+                                "url": "https://basescan.org",
+                                "apiUrl": "https://api.basescan.org/api"
+                            }
+                        },
+                        "sourceId": 1
+                    },
+                    "contractAddress": "0x6a1FE26D54ab0d3E1e3168f2e0c0cDa5cC0A0A4A",
+                    "_sessionKeyClient": {
+                        "account": {
+                            "address": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+                            "source": "ModularAccountV2",
+                            "type": "local",
+                            "signerEntity": {
+                                "entityId": 2,
+                                "isGlobalValidation": true
+                            }
+                        },
+                        "cacheTime": 4000,
+                        "chain": {
+                            "formatters": {
+                                "block": {
+                                    "type": "block"
+                                },
+                                "transaction": {
+                                    "type": "transaction"
+                                },
+                                "transactionReceipt": {
+                                    "type": "transactionReceipt"
+                                }
+                            },
+                            "serializers": {},
+                            "contracts": {
+                                "gasPriceOracle": {
+                                    "address": "0x420000000000000000000000000000000000000F"
+                                },
+                                "l1Block": {
+                                    "address": "0x4200000000000000000000000000000000000015"
+                                },
+                                "l2CrossDomainMessenger": {
+                                    "address": "0x4200000000000000000000000000000000000007"
+                                },
+                                "l2Erc721Bridge": {
+                                    "address": "0x4200000000000000000000000000000000000014"
+                                },
+                                "l2StandardBridge": {
+                                    "address": "0x4200000000000000000000000000000000000010"
+                                },
+                                "l2ToL1MessagePasser": {
+                                    "address": "0x4200000000000000000000000000000000000016"
+                                },
+                                "disputeGameFactory": {
+                                    "1": {
+                                        "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                    }
+                                },
+                                "l2OutputOracle": {
+                                    "1": {
+                                        "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                    }
+                                },
+                                "multicall3": {
+                                    "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                    "blockCreated": 5022
+                                },
+                                "portal": {
+                                    "1": {
+                                        "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                        "blockCreated": 17482143
+                                    }
+                                },
+                                "l1StandardBridge": {
+                                    "1": {
+                                        "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                        "blockCreated": 17482143
+                                    }
+                                }
+                            },
+                            "id": 8453,
+                            "name": "Base",
+                            "nativeCurrency": {
+                                "name": "Ether",
+                                "symbol": "ETH",
+                                "decimals": 18
+                            },
+                            "rpcUrls": {
+                                "default": {
+                                    "http": [
+                                        "https://mainnet.base.org"
+                                    ]
+                                },
+                                "alchemy": {
+                                    "http": [
+                                        "https://base-mainnet.g.alchemy.com/v2"
+                                    ]
+                                }
+                            },
+                            "blockExplorers": {
+                                "default": {
+                                    "name": "Basescan",
+                                    "url": "https://basescan.org",
+                                    "apiUrl": "https://api.basescan.org/api"
+                                }
+                            },
+                            "sourceId": 1
+                        },
+                        "key": "account",
+                        "name": "account provider",
+                        "pollingInterval": 4000,
+                        "transport": {
+                            "key": "custom",
+                            "name": "Custom Provider",
+                            "retryCount": 3,
+                            "retryDelay": 150,
+                            "type": "custom"
+                        },
+                        "type": "SmartAccountClient",
+                        "uid": "0854f834957",
+                        "txMaxRetries": 5,
+                        "txRetryIntervalMs": 2000,
+                        "txRetryMultiplier": 1.5,
+                        "feeOptions": {
+                            "maxFeePerGas": {
+                                "multiplier": 1.5
+                            },
+                            "maxPriorityFeePerGas": {
+                                "multiplier": 1.05
+                            }
+                        },
+                        "middleware": {}
+                    }
+                },
+                "acpUrl": "https://acpx.virtuals.io"
+            },
+            "id": 286876,
+            "type": 0,
+            "content": "{\"serviceName\":\"audit_contract\",\"serviceRequirement\":{\"contractAddress\":\"0xdAC17F958D2ee523a2206206994597C13D831ec7\",\"chain\":\"ethereum\"}}",
+            "nextPhase": 1,
+            "status": "APPROVED",
+            "senderAddress": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+            "signedReason": "I am accepting the job, I can provide the service",
+            "payableDetails": null,
+            "structuredContent": {
+                "serviceName": "audit_contract",
+                "serviceRequirement": {
+                    "contractAddress": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+                    "chain": "ethereum"
+                }
+            }
+        },
+        {
+            "acpClient": {
+                "acpContractClient": {
+                    "walletPrivateKey": "0x30eb504841d3c14db387bc5c7f49e0b746ee1e19c8ac536b2b54c08169b781a3",
+                    "sessionEntityKeyId": 2,
+                    "agentWalletAddress": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+                    "config": {
+                        "chain": {
+                            "formatters": {
+                                "block": {
+                                    "type": "block"
+                                },
+                                "transaction": {
+                                    "type": "transaction"
+                                },
+                                "transactionReceipt": {
+                                    "type": "transactionReceipt"
+                                }
+                            },
+                            "serializers": {},
+                            "contracts": {
+                                "gasPriceOracle": {
+                                    "address": "0x420000000000000000000000000000000000000F"
+                                },
+                                "l1Block": {
+                                    "address": "0x4200000000000000000000000000000000000015"
+                                },
+                                "l2CrossDomainMessenger": {
+                                    "address": "0x4200000000000000000000000000000000000007"
+                                },
+                                "l2Erc721Bridge": {
+                                    "address": "0x4200000000000000000000000000000000000014"
+                                },
+                                "l2StandardBridge": {
+                                    "address": "0x4200000000000000000000000000000000000010"
+                                },
+                                "l2ToL1MessagePasser": {
+                                    "address": "0x4200000000000000000000000000000000000016"
+                                },
+                                "disputeGameFactory": {
+                                    "1": {
+                                        "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                    }
+                                },
+                                "l2OutputOracle": {
+                                    "1": {
+                                        "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                    }
+                                },
+                                "multicall3": {
+                                    "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                    "blockCreated": 5022
+                                },
+                                "portal": {
+                                    "1": {
+                                        "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                        "blockCreated": 17482143
+                                    }
+                                },
+                                "l1StandardBridge": {
+                                    "1": {
+                                        "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                        "blockCreated": 17482143
+                                    }
+                                }
+                            },
+                            "id": 8453,
+                            "name": "Base",
+                            "nativeCurrency": {
+                                "name": "Ether",
+                                "symbol": "ETH",
+                                "decimals": 18
+                            },
+                            "rpcUrls": {
+                                "default": {
+                                    "http": [
+                                        "https://mainnet.base.org"
+                                    ]
+                                },
+                                "alchemy": {
+                                    "http": [
+                                        "https://base-mainnet.g.alchemy.com/v2"
+                                    ]
+                                }
+                            },
+                            "blockExplorers": {
+                                "default": {
+                                    "name": "Basescan",
+                                    "url": "https://basescan.org",
+                                    "apiUrl": "https://api.basescan.org/api"
+                                }
+                            },
+                            "sourceId": 1
+                        },
+                        "contractAddress": "0x6a1FE26D54ab0d3E1e3168f2e0c0cDa5cC0A0A4A",
+                        "baseFare": {
+                            "contractAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+                            "decimals": 6
+                        },
+                        "alchemyRpcUrl": "https://alchemy-proxy-prod.virtuals.io/api/proxy/rpc",
+                        "acpUrl": "https://acpx.virtuals.io"
+                    },
+                    "MAX_RETRIES": 3,
+                    "PRIORITY_FEE_MULTIPLIER": 2,
+                    "MAX_FEE_PER_GAS": 20000000,
+                    "MAX_PRIORITY_FEE_PER_GAS": 21000000,
+                    "chain": {
+                        "formatters": {
+                            "block": {
+                                "type": "block"
+                            },
+                            "transaction": {
+                                "type": "transaction"
+                            },
+                            "transactionReceipt": {
+                                "type": "transactionReceipt"
+                            }
+                        },
+                        "serializers": {},
+                        "contracts": {
+                            "gasPriceOracle": {
+                                "address": "0x420000000000000000000000000000000000000F"
+                            },
+                            "l1Block": {
+                                "address": "0x4200000000000000000000000000000000000015"
+                            },
+                            "l2CrossDomainMessenger": {
+                                "address": "0x4200000000000000000000000000000000000007"
+                            },
+                            "l2Erc721Bridge": {
+                                "address": "0x4200000000000000000000000000000000000014"
+                            },
+                            "l2StandardBridge": {
+                                "address": "0x4200000000000000000000000000000000000010"
+                            },
+                            "l2ToL1MessagePasser": {
+                                "address": "0x4200000000000000000000000000000000000016"
+                            },
+                            "disputeGameFactory": {
+                                "1": {
+                                    "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                }
+                            },
+                            "l2OutputOracle": {
+                                "1": {
+                                    "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                }
+                            },
+                            "multicall3": {
+                                "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                "blockCreated": 5022
+                            },
+                            "portal": {
+                                "1": {
+                                    "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                    "blockCreated": 17482143
+                                }
+                            },
+                            "l1StandardBridge": {
+                                "1": {
+                                    "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                    "blockCreated": 17482143
+                                }
+                            }
+                        },
+                        "id": 8453,
+                        "name": "Base",
+                        "nativeCurrency": {
+                            "name": "Ether",
+                            "symbol": "ETH",
+                            "decimals": 18
+                        },
+                        "rpcUrls": {
+                            "default": {
+                                "http": [
+                                    "https://mainnet.base.org"
+                                ]
+                            },
+                            "alchemy": {
+                                "http": [
+                                    "https://base-mainnet.g.alchemy.com/v2"
+                                ]
+                            }
+                        },
+                        "blockExplorers": {
+                            "default": {
+                                "name": "Basescan",
+                                "url": "https://basescan.org",
+                                "apiUrl": "https://api.basescan.org/api"
+                            }
+                        },
+                        "sourceId": 1
+                    },
+                    "contractAddress": "0x6a1FE26D54ab0d3E1e3168f2e0c0cDa5cC0A0A4A",
+                    "_sessionKeyClient": {
+                        "account": {
+                            "address": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+                            "source": "ModularAccountV2",
+                            "type": "local",
+                            "signerEntity": {
+                                "entityId": 2,
+                                "isGlobalValidation": true
+                            }
+                        },
+                        "cacheTime": 4000,
+                        "chain": {
+                            "formatters": {
+                                "block": {
+                                    "type": "block"
+                                },
+                                "transaction": {
+                                    "type": "transaction"
+                                },
+                                "transactionReceipt": {
+                                    "type": "transactionReceipt"
+                                }
+                            },
+                            "serializers": {},
+                            "contracts": {
+                                "gasPriceOracle": {
+                                    "address": "0x420000000000000000000000000000000000000F"
+                                },
+                                "l1Block": {
+                                    "address": "0x4200000000000000000000000000000000000015"
+                                },
+                                "l2CrossDomainMessenger": {
+                                    "address": "0x4200000000000000000000000000000000000007"
+                                },
+                                "l2Erc721Bridge": {
+                                    "address": "0x4200000000000000000000000000000000000014"
+                                },
+                                "l2StandardBridge": {
+                                    "address": "0x4200000000000000000000000000000000000010"
+                                },
+                                "l2ToL1MessagePasser": {
+                                    "address": "0x4200000000000000000000000000000000000016"
+                                },
+                                "disputeGameFactory": {
+                                    "1": {
+                                        "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                    }
+                                },
+                                "l2OutputOracle": {
+                                    "1": {
+                                        "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                    }
+                                },
+                                "multicall3": {
+                                    "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                    "blockCreated": 5022
+                                },
+                                "portal": {
+                                    "1": {
+                                        "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                        "blockCreated": 17482143
+                                    }
+                                },
+                                "l1StandardBridge": {
+                                    "1": {
+                                        "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                        "blockCreated": 17482143
+                                    }
+                                }
+                            },
+                            "id": 8453,
+                            "name": "Base",
+                            "nativeCurrency": {
+                                "name": "Ether",
+                                "symbol": "ETH",
+                                "decimals": 18
+                            },
+                            "rpcUrls": {
+                                "default": {
+                                    "http": [
+                                        "https://mainnet.base.org"
+                                    ]
+                                },
+                                "alchemy": {
+                                    "http": [
+                                        "https://base-mainnet.g.alchemy.com/v2"
+                                    ]
+                                }
+                            },
+                            "blockExplorers": {
+                                "default": {
+                                    "name": "Basescan",
+                                    "url": "https://basescan.org",
+                                    "apiUrl": "https://api.basescan.org/api"
+                                }
+                            },
+                            "sourceId": 1
+                        },
+                        "key": "account",
+                        "name": "account provider",
+                        "pollingInterval": 4000,
+                        "transport": {
+                            "key": "custom",
+                            "name": "Custom Provider",
+                            "retryCount": 3,
+                            "retryDelay": 150,
+                            "type": "custom"
+                        },
+                        "type": "SmartAccountClient",
+                        "uid": "0854f834957",
+                        "txMaxRetries": 5,
+                        "txRetryIntervalMs": 2000,
+                        "txRetryMultiplier": 1.5,
+                        "feeOptions": {
+                            "maxFeePerGas": {
+                                "multiplier": 1.5
+                            },
+                            "maxPriorityFeePerGas": {
+                                "multiplier": 1.05
+                            }
+                        },
+                        "middleware": {}
+                    }
+                },
+                "acpUrl": "https://acpx.virtuals.io"
+            },
+            "id": 286877,
+            "type": 0,
+            "content": "Job 82081 accepted. I am accepting the job, I can provide the service",
+            "nextPhase": 2,
+            "status": "APPROVED",
+            "senderAddress": "0x5ABD4e9561095B9Dd21EcbF6e718f073966C06fC",
+            "signedReason": "Payment for fullfilling the job",
+            "payableDetails": null
+        },
+        {
+            "acpClient": {
+                "acpContractClient": {
+                    "walletPrivateKey": "0x30eb504841d3c14db387bc5c7f49e0b746ee1e19c8ac536b2b54c08169b781a3",
+                    "sessionEntityKeyId": 2,
+                    "agentWalletAddress": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+                    "config": {
+                        "chain": {
+                            "formatters": {
+                                "block": {
+                                    "type": "block"
+                                },
+                                "transaction": {
+                                    "type": "transaction"
+                                },
+                                "transactionReceipt": {
+                                    "type": "transactionReceipt"
+                                }
+                            },
+                            "serializers": {},
+                            "contracts": {
+                                "gasPriceOracle": {
+                                    "address": "0x420000000000000000000000000000000000000F"
+                                },
+                                "l1Block": {
+                                    "address": "0x4200000000000000000000000000000000000015"
+                                },
+                                "l2CrossDomainMessenger": {
+                                    "address": "0x4200000000000000000000000000000000000007"
+                                },
+                                "l2Erc721Bridge": {
+                                    "address": "0x4200000000000000000000000000000000000014"
+                                },
+                                "l2StandardBridge": {
+                                    "address": "0x4200000000000000000000000000000000000010"
+                                },
+                                "l2ToL1MessagePasser": {
+                                    "address": "0x4200000000000000000000000000000000000016"
+                                },
+                                "disputeGameFactory": {
+                                    "1": {
+                                        "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                    }
+                                },
+                                "l2OutputOracle": {
+                                    "1": {
+                                        "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                    }
+                                },
+                                "multicall3": {
+                                    "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                    "blockCreated": 5022
+                                },
+                                "portal": {
+                                    "1": {
+                                        "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                        "blockCreated": 17482143
+                                    }
+                                },
+                                "l1StandardBridge": {
+                                    "1": {
+                                        "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                        "blockCreated": 17482143
+                                    }
+                                }
+                            },
+                            "id": 8453,
+                            "name": "Base",
+                            "nativeCurrency": {
+                                "name": "Ether",
+                                "symbol": "ETH",
+                                "decimals": 18
+                            },
+                            "rpcUrls": {
+                                "default": {
+                                    "http": [
+                                        "https://mainnet.base.org"
+                                    ]
+                                },
+                                "alchemy": {
+                                    "http": [
+                                        "https://base-mainnet.g.alchemy.com/v2"
+                                    ]
+                                }
+                            },
+                            "blockExplorers": {
+                                "default": {
+                                    "name": "Basescan",
+                                    "url": "https://basescan.org",
+                                    "apiUrl": "https://api.basescan.org/api"
+                                }
+                            },
+                            "sourceId": 1
+                        },
+                        "contractAddress": "0x6a1FE26D54ab0d3E1e3168f2e0c0cDa5cC0A0A4A",
+                        "baseFare": {
+                            "contractAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+                            "decimals": 6
+                        },
+                        "alchemyRpcUrl": "https://alchemy-proxy-prod.virtuals.io/api/proxy/rpc",
+                        "acpUrl": "https://acpx.virtuals.io"
+                    },
+                    "MAX_RETRIES": 3,
+                    "PRIORITY_FEE_MULTIPLIER": 2,
+                    "MAX_FEE_PER_GAS": 20000000,
+                    "MAX_PRIORITY_FEE_PER_GAS": 21000000,
+                    "chain": {
+                        "formatters": {
+                            "block": {
+                                "type": "block"
+                            },
+                            "transaction": {
+                                "type": "transaction"
+                            },
+                            "transactionReceipt": {
+                                "type": "transactionReceipt"
+                            }
+                        },
+                        "serializers": {},
+                        "contracts": {
+                            "gasPriceOracle": {
+                                "address": "0x420000000000000000000000000000000000000F"
+                            },
+                            "l1Block": {
+                                "address": "0x4200000000000000000000000000000000000015"
+                            },
+                            "l2CrossDomainMessenger": {
+                                "address": "0x4200000000000000000000000000000000000007"
+                            },
+                            "l2Erc721Bridge": {
+                                "address": "0x4200000000000000000000000000000000000014"
+                            },
+                            "l2StandardBridge": {
+                                "address": "0x4200000000000000000000000000000000000010"
+                            },
+                            "l2ToL1MessagePasser": {
+                                "address": "0x4200000000000000000000000000000000000016"
+                            },
+                            "disputeGameFactory": {
+                                "1": {
+                                    "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                }
+                            },
+                            "l2OutputOracle": {
+                                "1": {
+                                    "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                }
+                            },
+                            "multicall3": {
+                                "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                "blockCreated": 5022
+                            },
+                            "portal": {
+                                "1": {
+                                    "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                    "blockCreated": 17482143
+                                }
+                            },
+                            "l1StandardBridge": {
+                                "1": {
+                                    "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                    "blockCreated": 17482143
+                                }
+                            }
+                        },
+                        "id": 8453,
+                        "name": "Base",
+                        "nativeCurrency": {
+                            "name": "Ether",
+                            "symbol": "ETH",
+                            "decimals": 18
+                        },
+                        "rpcUrls": {
+                            "default": {
+                                "http": [
+                                    "https://mainnet.base.org"
+                                ]
+                            },
+                            "alchemy": {
+                                "http": [
+                                    "https://base-mainnet.g.alchemy.com/v2"
+                                ]
+                            }
+                        },
+                        "blockExplorers": {
+                            "default": {
+                                "name": "Basescan",
+                                "url": "https://basescan.org",
+                                "apiUrl": "https://api.basescan.org/api"
+                            }
+                        },
+                        "sourceId": 1
+                    },
+                    "contractAddress": "0x6a1FE26D54ab0d3E1e3168f2e0c0cDa5cC0A0A4A",
+                    "_sessionKeyClient": {
+                        "account": {
+                            "address": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+                            "source": "ModularAccountV2",
+                            "type": "local",
+                            "signerEntity": {
+                                "entityId": 2,
+                                "isGlobalValidation": true
+                            }
+                        },
+                        "cacheTime": 4000,
+                        "chain": {
+                            "formatters": {
+                                "block": {
+                                    "type": "block"
+                                },
+                                "transaction": {
+                                    "type": "transaction"
+                                },
+                                "transactionReceipt": {
+                                    "type": "transactionReceipt"
+                                }
+                            },
+                            "serializers": {},
+                            "contracts": {
+                                "gasPriceOracle": {
+                                    "address": "0x420000000000000000000000000000000000000F"
+                                },
+                                "l1Block": {
+                                    "address": "0x4200000000000000000000000000000000000015"
+                                },
+                                "l2CrossDomainMessenger": {
+                                    "address": "0x4200000000000000000000000000000000000007"
+                                },
+                                "l2Erc721Bridge": {
+                                    "address": "0x4200000000000000000000000000000000000014"
+                                },
+                                "l2StandardBridge": {
+                                    "address": "0x4200000000000000000000000000000000000010"
+                                },
+                                "l2ToL1MessagePasser": {
+                                    "address": "0x4200000000000000000000000000000000000016"
+                                },
+                                "disputeGameFactory": {
+                                    "1": {
+                                        "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                    }
+                                },
+                                "l2OutputOracle": {
+                                    "1": {
+                                        "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                    }
+                                },
+                                "multicall3": {
+                                    "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                    "blockCreated": 5022
+                                },
+                                "portal": {
+                                    "1": {
+                                        "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                        "blockCreated": 17482143
+                                    }
+                                },
+                                "l1StandardBridge": {
+                                    "1": {
+                                        "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                        "blockCreated": 17482143
+                                    }
+                                }
+                            },
+                            "id": 8453,
+                            "name": "Base",
+                            "nativeCurrency": {
+                                "name": "Ether",
+                                "symbol": "ETH",
+                                "decimals": 18
+                            },
+                            "rpcUrls": {
+                                "default": {
+                                    "http": [
+                                        "https://mainnet.base.org"
+                                    ]
+                                },
+                                "alchemy": {
+                                    "http": [
+                                        "https://base-mainnet.g.alchemy.com/v2"
+                                    ]
+                                }
+                            },
+                            "blockExplorers": {
+                                "default": {
+                                    "name": "Basescan",
+                                    "url": "https://basescan.org",
+                                    "apiUrl": "https://api.basescan.org/api"
+                                }
+                            },
+                            "sourceId": 1
+                        },
+                        "key": "account",
+                        "name": "account provider",
+                        "pollingInterval": 4000,
+                        "transport": {
+                            "key": "custom",
+                            "name": "Custom Provider",
+                            "retryCount": 3,
+                            "retryDelay": 150,
+                            "type": "custom"
+                        },
+                        "type": "SmartAccountClient",
+                        "uid": "0854f834957",
+                        "txMaxRetries": 5,
+                        "txRetryIntervalMs": 2000,
+                        "txRetryMultiplier": 1.5,
+                        "feeOptions": {
+                            "maxFeePerGas": {
+                                "multiplier": 1.5
+                            },
+                            "maxPriorityFeePerGas": {
+                                "multiplier": 1.05
+                            }
+                        },
+                        "middleware": {}
+                    }
+                },
+                "acpUrl": "https://acpx.virtuals.io"
+            },
+            "id": 286885,
+            "type": 0,
+            "content": "Payment made. Payment for fullfilling the job",
+            "nextPhase": 3,
+            "status": "PENDING",
+            "senderAddress": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+            "signedReason": null,
+            "payableDetails": null
+        },
+        {
+            "acpClient": {
+                "acpContractClient": {
+                    "walletPrivateKey": "0x30eb504841d3c14db387bc5c7f49e0b746ee1e19c8ac536b2b54c08169b781a3",
+                    "sessionEntityKeyId": 2,
+                    "agentWalletAddress": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+                    "config": {
+                        "chain": {
+                            "formatters": {
+                                "block": {
+                                    "type": "block"
+                                },
+                                "transaction": {
+                                    "type": "transaction"
+                                },
+                                "transactionReceipt": {
+                                    "type": "transactionReceipt"
+                                }
+                            },
+                            "serializers": {},
+                            "contracts": {
+                                "gasPriceOracle": {
+                                    "address": "0x420000000000000000000000000000000000000F"
+                                },
+                                "l1Block": {
+                                    "address": "0x4200000000000000000000000000000000000015"
+                                },
+                                "l2CrossDomainMessenger": {
+                                    "address": "0x4200000000000000000000000000000000000007"
+                                },
+                                "l2Erc721Bridge": {
+                                    "address": "0x4200000000000000000000000000000000000014"
+                                },
+                                "l2StandardBridge": {
+                                    "address": "0x4200000000000000000000000000000000000010"
+                                },
+                                "l2ToL1MessagePasser": {
+                                    "address": "0x4200000000000000000000000000000000000016"
+                                },
+                                "disputeGameFactory": {
+                                    "1": {
+                                        "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                    }
+                                },
+                                "l2OutputOracle": {
+                                    "1": {
+                                        "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                    }
+                                },
+                                "multicall3": {
+                                    "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                    "blockCreated": 5022
+                                },
+                                "portal": {
+                                    "1": {
+                                        "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                        "blockCreated": 17482143
+                                    }
+                                },
+                                "l1StandardBridge": {
+                                    "1": {
+                                        "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                        "blockCreated": 17482143
+                                    }
+                                }
+                            },
+                            "id": 8453,
+                            "name": "Base",
+                            "nativeCurrency": {
+                                "name": "Ether",
+                                "symbol": "ETH",
+                                "decimals": 18
+                            },
+                            "rpcUrls": {
+                                "default": {
+                                    "http": [
+                                        "https://mainnet.base.org"
+                                    ]
+                                },
+                                "alchemy": {
+                                    "http": [
+                                        "https://base-mainnet.g.alchemy.com/v2"
+                                    ]
+                                }
+                            },
+                            "blockExplorers": {
+                                "default": {
+                                    "name": "Basescan",
+                                    "url": "https://basescan.org",
+                                    "apiUrl": "https://api.basescan.org/api"
+                                }
+                            },
+                            "sourceId": 1
+                        },
+                        "contractAddress": "0x6a1FE26D54ab0d3E1e3168f2e0c0cDa5cC0A0A4A",
+                        "baseFare": {
+                            "contractAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+                            "decimals": 6
+                        },
+                        "alchemyRpcUrl": "https://alchemy-proxy-prod.virtuals.io/api/proxy/rpc",
+                        "acpUrl": "https://acpx.virtuals.io"
+                    },
+                    "MAX_RETRIES": 3,
+                    "PRIORITY_FEE_MULTIPLIER": 2,
+                    "MAX_FEE_PER_GAS": 20000000,
+                    "MAX_PRIORITY_FEE_PER_GAS": 21000000,
+                    "chain": {
+                        "formatters": {
+                            "block": {
+                                "type": "block"
+                            },
+                            "transaction": {
+                                "type": "transaction"
+                            },
+                            "transactionReceipt": {
+                                "type": "transactionReceipt"
+                            }
+                        },
+                        "serializers": {},
+                        "contracts": {
+                            "gasPriceOracle": {
+                                "address": "0x420000000000000000000000000000000000000F"
+                            },
+                            "l1Block": {
+                                "address": "0x4200000000000000000000000000000000000015"
+                            },
+                            "l2CrossDomainMessenger": {
+                                "address": "0x4200000000000000000000000000000000000007"
+                            },
+                            "l2Erc721Bridge": {
+                                "address": "0x4200000000000000000000000000000000000014"
+                            },
+                            "l2StandardBridge": {
+                                "address": "0x4200000000000000000000000000000000000010"
+                            },
+                            "l2ToL1MessagePasser": {
+                                "address": "0x4200000000000000000000000000000000000016"
+                            },
+                            "disputeGameFactory": {
+                                "1": {
+                                    "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                }
+                            },
+                            "l2OutputOracle": {
+                                "1": {
+                                    "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                }
+                            },
+                            "multicall3": {
+                                "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                "blockCreated": 5022
+                            },
+                            "portal": {
+                                "1": {
+                                    "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                    "blockCreated": 17482143
+                                }
+                            },
+                            "l1StandardBridge": {
+                                "1": {
+                                    "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                    "blockCreated": 17482143
+                                }
+                            }
+                        },
+                        "id": 8453,
+                        "name": "Base",
+                        "nativeCurrency": {
+                            "name": "Ether",
+                            "symbol": "ETH",
+                            "decimals": 18
+                        },
+                        "rpcUrls": {
+                            "default": {
+                                "http": [
+                                    "https://mainnet.base.org"
+                                ]
+                            },
+                            "alchemy": {
+                                "http": [
+                                    "https://base-mainnet.g.alchemy.com/v2"
+                                ]
+                            }
+                        },
+                        "blockExplorers": {
+                            "default": {
+                                "name": "Basescan",
+                                "url": "https://basescan.org",
+                                "apiUrl": "https://api.basescan.org/api"
+                            }
+                        },
+                        "sourceId": 1
+                    },
+                    "contractAddress": "0x6a1FE26D54ab0d3E1e3168f2e0c0cDa5cC0A0A4A",
+                    "_sessionKeyClient": {
+                        "account": {
+                            "address": "0x9D8583541eD4d4cde121053b00CFb021981b99fC",
+                            "source": "ModularAccountV2",
+                            "type": "local",
+                            "signerEntity": {
+                                "entityId": 2,
+                                "isGlobalValidation": true
+                            }
+                        },
+                        "cacheTime": 4000,
+                        "chain": {
+                            "formatters": {
+                                "block": {
+                                    "type": "block"
+                                },
+                                "transaction": {
+                                    "type": "transaction"
+                                },
+                                "transactionReceipt": {
+                                    "type": "transactionReceipt"
+                                }
+                            },
+                            "serializers": {},
+                            "contracts": {
+                                "gasPriceOracle": {
+                                    "address": "0x420000000000000000000000000000000000000F"
+                                },
+                                "l1Block": {
+                                    "address": "0x4200000000000000000000000000000000000015"
+                                },
+                                "l2CrossDomainMessenger": {
+                                    "address": "0x4200000000000000000000000000000000000007"
+                                },
+                                "l2Erc721Bridge": {
+                                    "address": "0x4200000000000000000000000000000000000014"
+                                },
+                                "l2StandardBridge": {
+                                    "address": "0x4200000000000000000000000000000000000010"
+                                },
+                                "l2ToL1MessagePasser": {
+                                    "address": "0x4200000000000000000000000000000000000016"
+                                },
+                                "disputeGameFactory": {
+                                    "1": {
+                                        "address": "0x43edB88C4B80fDD2AdFF2412A7BebF9dF42cB40e"
+                                    }
+                                },
+                                "l2OutputOracle": {
+                                    "1": {
+                                        "address": "0x56315b90c40730925ec5485cf004d835058518A0"
+                                    }
+                                },
+                                "multicall3": {
+                                    "address": "0xca11bde05977b3631167028862be2a173976ca11",
+                                    "blockCreated": 5022
+                                },
+                                "portal": {
+                                    "1": {
+                                        "address": "0x49048044D57e1C92A77f79988d21Fa8fAF74E97e",
+                                        "blockCreated": 17482143
+                                    }
+                                },
+                                "l1StandardBridge": {
+                                    "1": {
+                                        "address": "0x3154Cf16ccdb4C6d922629664174b904d80F2C35",
+                                        "blockCreated": 17482143
+                                    }
+                                }
+                            },
+                            "id": 8453,
+                            "name": "Base",
+                            "nativeCurrency": {
+                                "name": "Ether",
+                                "symbol": "ETH",
+                                "decimals": 18
+                            },
+                            "rpcUrls": {
+                                "default": {
+                                    "http": [
+                                        "https://mainnet.base.org"
+                                    ]
+                                },
+                                "alchemy": {
+                                    "http": [
+                                        "https://base-mainnet.g.alchemy.com/v2"
+                                    ]
+                                }
+                            },
+                            "blockExplorers": {
+                                "default": {
+                                    "name": "Basescan",
+                                    "url": "https://basescan.org",
+                                    "apiUrl": "https://api.basescan.org/api"
+                                }
+                            },
+                            "sourceId": 1
+                        },
+                        "key": "account",
+                        "name": "account provider",
+                        "pollingInterval": 4000,
+                        "transport": {
+                            "key": "custom",
+                            "name": "Custom Provider",
+                            "retryCount": 3,
+                            "retryDelay": 150,
+                            "type": "custom"
+                        },
+                        "type": "SmartAccountClient",
+                        "uid": "0854f834957",
+                        "txMaxRetries": 5,
+                        "txRetryIntervalMs": 2000,
+                        "txRetryMultiplier": 1.5,
+                        "feeOptions": {
+                            "maxFeePerGas": {
+                                "multiplier": 1.5
+                            },
+                            "maxPriorityFeePerGas": {
+                                "multiplier": 1.05
+                            }
+                        },
+                        "middleware": {}
+                    }
+                },
+                "acpUrl": "https://acpx.virtuals.io"
+            },
+            "id": 286886,
+            "type": 4,
+            "content": "{\"type\":\"text\",\"value\":[\"═══════════════════════════════════════════════════════════════\\n                    SMART CONTRACT AUDIT REPORT\\n═══════════════════════════════════════════════════════════════\\n\\n📊 AUDIT OVERVIEW\\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\\n  • Files Audited: 1\\n  • Total Lines of Code: 447\\n  • Security Score: 11/100 (F Critical)\\n  • Total Vulnerabilities Found: 213\\n  • Audit Cost: N/A\\n\\n\\n🔍 VULNERABILITY BREAKDOWN\\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\\n  🔴 Critical/High:        0 issues\\n  🟠 Medium:              27 issues\\n  🟡 Low:                 92 issues\\n  ℹ️  Informational:      94 issues\\n  ⚡ Optimization:         0 issues\\n\\n\\n🛡️  SECURITY ASSESSMENT\\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\\n  Risk Level: 🔴 CRITICAL RISK\\n  Assessment: The contract has severe security vulnerabilities. DO NOT DEPLOY without fixes.\\n\\n\\n⚠️  CRITICAL VULNERABILITIES (Showing top 10)\\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\\n\\n  1. 🟠 Constructor Syntax Vulnerability\\n     ├─ Severity: MEDIUM\\n     ├─ Confidence: medium\\n     ├─ File: TetherToken.sol\\n     ├─ Lines: 48-50\\n     ├─ Description: 1. Deploy the Ownable contract. 2. Any user can call the `Ownable()` function at any time to set themselves as the owner. 3. The calling user becomes ...\\n     └─ Recommendation: Replace the function `Ownable` with the correct constructor syntax by using the `constructor` keyword. Modify line 1 to `constructor() public {` so th...\\n\\n\\n  2. 🟠 Lack of Access Control\\n     ├─ Severity: MEDIUM\\n     ├─ Confidence: medium\\n     ├─ File: TetherToken.sol\\n     ├─ Lines: 80-80\\n     ├─ Description: 1. Deploy the contract ledger without access control logic.  2. Call the transfer function without any form of authorization or approval checks. 3. Ob...\\n     └─ Recommendation: Implement proper access control mechanisms and consider using OpenZeppelin's libraries such as Ownable for managed roles and permissions.\\n\\n\\n  3. 🟠 Lack of Protection Against Integer Overflow/Underflow\\n     ├─ Severity: MEDIUM\\n     ├─ Confidence: medium\\n     ├─ File: TetherToken.sol\\n     ├─ Lines: 81-81\\n     ├─ Description: 1. Assume the balance of the sender is at maximum uint256.  2. Perform a transfer with a small amount, causing an overflow.  3. Sender's balance wraps...\\n     └─ Recommendation: Ensure that arithmetic operations are safe using the SafeMath library for performing arithmetic calculations. Use SafeMath's add and sub functions for...\\n\\n\\n  4. 🟠 Lack of Sufficient Balance Check\\n     ├─ Severity: MEDIUM\\n     ├─ Confidence: medium\\n     ├─ File: TetherToken.sol\\n     ├─ Lines: 81-81\\n     ├─ Description: 1. An account with balance X attempts to transfer Y where Y > X.  2. Without a check, the function proceeds, potentially resulting in incorrect state ...\\n     └─ Recommendation: Add a require statement to ensure that the sender has enough balance to transfer the specified amount.\\n\\n\\n  5. 🟠 Lack of Check for Transfer Function\\n     ├─ Severity: MEDIUM\\n     ├─ Confidence: medium\\n     ├─ File: TetherToken.sol\\n     ├─ Lines: 91-91\\n     ├─ Description: 1. Assume Alice has 100 tokens.  2. A malicious user could potentially call 'transfer' to move tokens from Alice to themselves if there is no balance ...\\n     └─ Recommendation: Implement appropriate checks to ensure that transfer operations are only conducted with valid and authorized parameters. Ensure that the 'transfer' fu...\\n\\n\\n  6. 🟠 Race Condition AKA Reentrancy\\n     ├─ Severity: MEDIUM\\n     ├─ Confidence: medium\\n     ├─ File: TetherToken.sol\\n     ├─ Lines: 90-90\\n     ├─ Description: 1. Approve a contract for a certain amount of tokens on allowance. 2. The contract has a fallback or receive function that calls transferFrom repeated...\\n     └─ Recommendation: Use the Checks-Effects-Interactions pattern and consider implementing the OpenZeppelin's SafeERC20 library that includes functions to safely decrease ...\\n\\n\\n  7. 🟠 Race Condition: Double Spending with approve / front-running\\n     ├─ Severity: MEDIUM\\n     ├─ Confidence: medium\\n     ├─ File: TetherToken.sol\\n     ├─ Lines: 92-92\\n     ├─ Description: 1. User A sets allowance for spender B to 100 tokens.  2. Spender B is about to call transferFrom for 100 tokens.  3. Before transferFrom is mined, Us...\\n     └─ Recommendation: Implement the 'increaseAllowance' and 'decreaseAllowance' functions instead of using the approve function directly to reset allowances. By increasing ...\\n\\n\\n  8. 🟠 Race Condition (Approve and TransferFrom)\\n     ├─ Severity: MEDIUM\\n     ├─ Confidence: medium\\n     ├─ File: TetherToken.sol\\n     ├─ Lines: 213-215\\n     ├─ Description: 1. User sets an allowance of 100 tokens. 2. Spender uses 100 tokens, reducing allowance to 0. 3. User tries to set a new allowance of 200 tokens. 4. S...\\n     └─ Recommendation: Implement the use of the increaseAllowance and decreaseAllowance functions instead of approve, or require that allowance is set to zero before updatin...\\n\\n\\n  9. 🟠 Integer Overflow/Underflow\\n     ├─ Severity: MEDIUM\\n     ├─ Confidence: medium\\n     ├─ File: TetherToken.sol\\n     ├─ Lines: 167-188\\n     ├─ Description: 1. Calculate _value such that it causes an overflow when added to or subtracted from balances. 2. Invoke transferFrom causing the incorrect balance up...\\n     └─ Recommendation: Use SafeMath library to ensure safe arithmetic operations to prevent integer overflow/underflow.\\n\\n\\n  10. 🟠 Race Condition/Transaction Order Dependence\\n     ├─ Severity: MEDIUM\\n     ├─ Confidence: medium\\n     ├─ File: TetherToken.sol\\n     ├─ Lines: 195-205\\n     ├─ Description: 1. Account A sets an allowance for Account B.  2. Account B creates a transaction using full allowance.  3. Meanwhile, Account A decides to increase a...\\n     └─ Recommendation: Implement an 'increaseAllowance' and 'decreaseAllowance' function pattern that explicitly sets the allowance amount by incrementing or decrementing it...\\n\\n  ... and 17 more critical issues\\n\\n\\n📋 TOP VULNERABILITY TYPES\\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\\n   1. Integer Overflow/Underflow: 11 occurrence(s)\\n   2. Reentrancy: 6 occurrence(s)\\n   3. Approval Race Condition: 5 occurrence(s)\\n   4. Lack of Input Validation: 5 occurrence(s)\\n   5. Centralization Risk: 4 occurrence(s)\\n   6. Lack of Access Control: 3 occurrence(s)\\n   7. Reentrancy Vulnerability: 3 occurrence(s)\\n   8. Potential Integer Overflow/Underflow: 2 occurrence(s)\\n   9. Lack of Event Emission: 2 occurrence(s)\\n  10. Arithmetic Underflow/Overflow: 2 occurrence(s)\\n\\n\\n💡 KEY RECOMMENDATIONS\\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\\n  ⚠️  IMMEDIATE ACTION REQUIRED:\\n  • Address all 0 HIGH severity issues immediately\\n  • Review and fix 27 MEDIUM severity issues\\n  • Consider addressing 92 LOW severity issues\\n  \\n  📝 GENERAL RECOMMENDATIONS:\\n  • Conduct thorough testing after fixes\\n  • Consider a professional audit for production deployment\\n  • Implement automated security checks in CI/CD pipeline\\n  • Review and update dependencies regularly\\n\\n\\n═══════════════════════════════════════════════════════════════\\n                      END OF AUDIT REPORT\\n═══════════════════════════════════════════════════════════════\\n\\n⚠️  DISCLAIMER: This is an automated audit report. For production\\n    deployments, always get a professional manual audit.\\n\\n📊 Powered by WachAI\"]}",
+            "nextPhase": 4,
+            "status": "APPROVED",
+            "senderAddress": "0x5ABD4e9561095B9Dd21EcbF6e718f073966C06fC",
+            "signedReason": "Evaluated by default",
+            "payableDetails": null,
+            "structuredContent": {
+                "type": "text",
+                "value": [
+                    "═══════════════════════════════════════════════════════════════\n                    SMART CONTRACT AUDIT REPORT\n═══════════════════════════════════════════════════════════════\n\n📊 AUDIT OVERVIEW\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  • Files Audited: 1\n  • Total Lines of Code: 447\n  • Security Score: 11/100 (F Critical)\n  • Total Vulnerabilities Found: 213\n  • Audit Cost: N/A\n\n\n🔍 VULNERABILITY BREAKDOWN\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  🔴 Critical/High:        0 issues\n  🟠 Medium:              27 issues\n  🟡 Low:                 92 issues\n  ℹ️  Informational:      94 issues\n  ⚡ Optimization:         0 issues\n\n\n🛡️  SECURITY ASSESSMENT\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  Risk Level: 🔴 CRITICAL RISK\n  Assessment: The contract has severe security vulnerabilities. DO NOT DEPLOY without fixes.\n\n\n⚠️  CRITICAL VULNERABILITIES (Showing top 10)\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n  1. 🟠 Constructor Syntax Vulnerability\n     ├─ Severity: MEDIUM\n     ├─ Confidence: medium\n     ├─ File: TetherToken.sol\n     ├─ Lines: 48-50\n     ├─ Description: 1. Deploy the Ownable contract. 2. Any user can call the `Ownable()` function at any time to set themselves as the owner. 3. The calling user becomes ...\n     └─ Recommendation: Replace the function `Ownable` with the correct constructor syntax by using the `constructor` keyword. Modify line 1 to `constructor() public {` so th...\n\n\n  2. 🟠 Lack of Access Control\n     ├─ Severity: MEDIUM\n     ├─ Confidence: medium\n     ├─ File: TetherToken.sol\n     ├─ Lines: 80-80\n     ├─ Description: 1. Deploy the contract ledger without access control logic.  2. Call the transfer function without any form of authorization or approval checks. 3. Ob...\n     └─ Recommendation: Implement proper access control mechanisms and consider using OpenZeppelin's libraries such as Ownable for managed roles and permissions.\n\n\n  3. 🟠 Lack of Protection Against Integer Overflow/Underflow\n     ├─ Severity: MEDIUM\n     ├─ Confidence: medium\n     ├─ File: TetherToken.sol\n     ├─ Lines: 81-81\n     ├─ Description: 1. Assume the balance of the sender is at maximum uint256.  2. Perform a transfer with a small amount, causing an overflow.  3. Sender's balance wraps...\n     └─ Recommendation: Ensure that arithmetic operations are safe using the SafeMath library for performing arithmetic calculations. Use SafeMath's add and sub functions for...\n\n\n  4. 🟠 Lack of Sufficient Balance Check\n     ├─ Severity: MEDIUM\n     ├─ Confidence: medium\n     ├─ File: TetherToken.sol\n     ├─ Lines: 81-81\n     ├─ Description: 1. An account with balance X attempts to transfer Y where Y > X.  2. Without a check, the function proceeds, potentially resulting in incorrect state ...\n     └─ Recommendation: Add a require statement to ensure that the sender has enough balance to transfer the specified amount.\n\n\n  5. 🟠 Lack of Check for Transfer Function\n     ├─ Severity: MEDIUM\n     ├─ Confidence: medium\n     ├─ File: TetherToken.sol\n     ├─ Lines: 91-91\n     ├─ Description: 1. Assume Alice has 100 tokens.  2. A malicious user could potentially call 'transfer' to move tokens from Alice to themselves if there is no balance ...\n     └─ Recommendation: Implement appropriate checks to ensure that transfer operations are only conducted with valid and authorized parameters. Ensure that the 'transfer' fu...\n\n\n  6. 🟠 Race Condition AKA Reentrancy\n     ├─ Severity: MEDIUM\n     ├─ Confidence: medium\n     ├─ File: TetherToken.sol\n     ├─ Lines: 90-90\n     ├─ Description: 1. Approve a contract for a certain amount of tokens on allowance. 2. The contract has a fallback or receive function that calls transferFrom repeated...\n     └─ Recommendation: Use the Checks-Effects-Interactions pattern and consider implementing the OpenZeppelin's SafeERC20 library that includes functions to safely decrease ...\n\n\n  7. 🟠 Race Condition: Double Spending with approve / front-running\n     ├─ Severity: MEDIUM\n     ├─ Confidence: medium\n     ├─ File: TetherToken.sol\n     ├─ Lines: 92-92\n     ├─ Description: 1. User A sets allowance for spender B to 100 tokens.  2. Spender B is about to call transferFrom for 100 tokens.  3. Before transferFrom is mined, Us...\n     └─ Recommendation: Implement the 'increaseAllowance' and 'decreaseAllowance' functions instead of using the approve function directly to reset allowances. By increasing ...\n\n\n  8. 🟠 Race Condition (Approve and TransferFrom)\n     ├─ Severity: MEDIUM\n     ├─ Confidence: medium\n     ├─ File: TetherToken.sol\n     ├─ Lines: 213-215\n     ├─ Description: 1. User sets an allowance of 100 tokens. 2. Spender uses 100 tokens, reducing allowance to 0. 3. User tries to set a new allowance of 200 tokens. 4. S...\n     └─ Recommendation: Implement the use of the increaseAllowance and decreaseAllowance functions instead of approve, or require that allowance is set to zero before updatin...\n\n\n  9. 🟠 Integer Overflow/Underflow\n     ├─ Severity: MEDIUM\n     ├─ Confidence: medium\n     ├─ File: TetherToken.sol\n     ├─ Lines: 167-188\n     ├─ Description: 1. Calculate _value such that it causes an overflow when added to or subtracted from balances. 2. Invoke transferFrom causing the incorrect balance up...\n     └─ Recommendation: Use SafeMath library to ensure safe arithmetic operations to prevent integer overflow/underflow.\n\n\n  10. 🟠 Race Condition/Transaction Order Dependence\n     ├─ Severity: MEDIUM\n     ├─ Confidence: medium\n     ├─ File: TetherToken.sol\n     ├─ Lines: 195-205\n     ├─ Description: 1. Account A sets an allowance for Account B.  2. Account B creates a transaction using full allowance.  3. Meanwhile, Account A decides to increase a...\n     └─ Recommendation: Implement an 'increaseAllowance' and 'decreaseAllowance' function pattern that explicitly sets the allowance amount by incrementing or decrementing it...\n\n  ... and 17 more critical issues\n\n\n📋 TOP VULNERABILITY TYPES\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n   1. Integer Overflow/Underflow: 11 occurrence(s)\n   2. Reentrancy: 6 occurrence(s)\n   3. Approval Race Condition: 5 occurrence(s)\n   4. Lack of Input Validation: 5 occurrence(s)\n   5. Centralization Risk: 4 occurrence(s)\n   6. Lack of Access Control: 3 occurrence(s)\n   7. Reentrancy Vulnerability: 3 occurrence(s)\n   8. Potential Integer Overflow/Underflow: 2 occurrence(s)\n   9. Lack of Event Emission: 2 occurrence(s)\n  10. Arithmetic Underflow/Overflow: 2 occurrence(s)\n\n\n💡 KEY RECOMMENDATIONS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  ⚠️  IMMEDIATE ACTION REQUIRED:\n  • Address all 0 HIGH severity issues immediately\n  • Review and fix 27 MEDIUM severity issues\n  • Consider addressing 92 LOW severity issues\n  \n  📝 GENERAL RECOMMENDATIONS:\n  • Conduct thorough testing after fixes\n  • Consider a professional audit for production deployment\n  • Implement automated security checks in CI/CD pipeline\n  • Review and update dependencies regularly\n\n\n═══════════════════════════════════════════════════════════════\n                      END OF AUDIT REPORT\n═══════════════════════════════════════════════════════════════\n\n⚠️  DISCLAIMER: This is an automated audit report. For production\n    deployments, always get a professional manual audit.\n\n📊 Powered by WachAI"
+                ]
+            }
+        }
+    ],
+    "phase": 4,
+    "context": null,
+    "baseFare": {
+        "contractAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "decimals": 6
+    }
+}
