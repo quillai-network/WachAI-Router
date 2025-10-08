@@ -23,7 +23,7 @@ async function test() {
     const acpContractClient = await AcpContractClient.build(
       `0x${process.env.BUYER_PRIVATE_KEY}` as `0x${string}`,
       parseInt(process.env.BUYER_ENTITY_ID as string),
-     '0x9D8583541eD4d4cde121053b00CFb021981b99fC' as `0x${string}`,
+      process.env.BUYER_AGENT_WALLET_ADDRESS as `0x${string}`,
     );
 
     console.log("Starting ACP Client in Polling Mode");
@@ -74,7 +74,7 @@ async function test() {
           console.log(`Processing job ${job.id} in phase: ${AcpJobPhases[job.phase]}`);
 
           // skip some pending jobs
-          if ([19215, 19211, 13982, 82030].includes(job.id)) {
+          if ([19215, 19211, 13982, 82030, 82430, 82428,82424].includes(job.id)) {
             console.log(`Skipping job ${job.id} as it is pending`);
             continue;
           }
@@ -96,10 +96,10 @@ async function test() {
 
           // Handle EVALUATION phase - evaluate the job
           if (job.phase === AcpJobPhases.EVALUATION && job.evaluatorAddress === process.env.BUYER_AGENT_WALLET_ADDRESS) {
-            console.log(`Evaluating job ${job.id} with deliverable: ${JSON.stringify(job.deliverable)}`);
-            console.log(`The response for the ${job.id}
-              ${JSON.stringify(job.deliverable)}
-            `)
+            // console.log(`Evaluating job ${job.id} with deliverable: ${JSON.stringify(job.deliverable)}`);
+            // console.log(`The response for the ${job.id}
+            //   ${JSON.stringify(job.deliverable)}
+            // `)
             await job.evaluate(true, "This is a test reasoning - job completed successfully");
             console.log(`Successfully evaluated job ${job.id}`);
           }

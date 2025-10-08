@@ -74,7 +74,11 @@ async function processJob(acpClient: AcpClient, activeJob: any, role: string) {
         let originalJobId = jobId;
         if(role === "consumer") {
             const originalJob = await getJobMappingByRouted(jobId)
-            originalJobId = originalJob.original_job_id;
+            originalJobId = originalJob?.original_job_id;
+            if(!originalJobId) {
+                console.log(`No original job id found for routed job ${jobId}`);
+                return;
+            }
             console.log(`Original job id: ${originalJobId} FROM routed job ${jobId}`);
         }
 
@@ -216,7 +220,6 @@ async function handleNegotiationPhase(acpClient: AcpClient, job: AcpJob, jobStag
         return;
     }
 
-    console.log(`Job stages on negotiation phase: ${JSON.stringify(jobStages)}`);
     if (jobStages.job_phase === "REJECTED" || jobStages.job_phase === "ACCEPTED") {
         console.log(`Skipping job ${job.id} in NEGOTIATION PHASE as agent already responded`);
         return;
@@ -237,7 +240,6 @@ async function handleNegotiationPhase(acpClient: AcpClient, job: AcpJob, jobStag
 
     await originalJob.respond(true, undefined, "I am accepting the job, I can provide the service");
     console.log(`Job ${job.id} is accepted`);
-    console.log(`Job stages: ${JSON.stringify(jobStages)}`);
     jobStages.job_phase = "ACCEPTED";
 }
 
@@ -272,11 +274,11 @@ async function handleTransactionPhase(acpClient: AcpClient, job: AcpJob, jobStag
         return;
     }
 
-    // if (jobStages.job_phase !== "ACCEPTED") {
-    //     console.log(`Job stages: ${JSON.stringify(jobStages)}`);
-    //     console.log(`Skipping job ${job.id} in TRANSACTION PHASE as job not accepted`);
-    //     return;
-    // }
+    if (jobStages.job_phase !== "ACCEPTED") {
+        console.log(`Job stages: ${JSON.stringify(jobStages)}`);
+        console.log(`Skipping job ${job.id} in TRANSACTION PHASE as job not accepted`);
+        return;
+    }
 
     
     // Get routed job mapping from Redis
