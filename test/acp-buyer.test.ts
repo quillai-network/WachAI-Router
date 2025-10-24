@@ -44,7 +44,7 @@ async function test() {
           console.log("No active jobs found, browsing for new agents...");
           // Browse available agents based on a keyword and cluster name
           const relevantAgents = await acpClient.browseAgents(
-            "Sentry:WachAI",
+            "WachAI:Router",
             {
               graduationStatus: AcpGraduationStatus.NOT_GRADUATED,
               onlineStatus: AcpOnlineStatus.ALL,
@@ -53,7 +53,7 @@ async function test() {
           console.log(`Found ${relevantAgents.length} relevant agents`);
           // console.log(relevantAgents)
           const relevantAgent = relevantAgents[0];
-          const offerings = relevantAgent.offerings[0];
+          const offerings = relevantAgent.offerings[1];
           console.log(offerings.name)
           console.log(`Creating job for agent ${relevantAgent.name}`);
           await offerings.initiateJob(

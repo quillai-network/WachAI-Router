@@ -17,11 +17,11 @@ async function testRouterAgentFunctionality() {
         const testCases = [
             {
                 input: "I need to audit this smart contract for security vulnerabilities",
-                expected: "audit_contract"
+                expected: "verify_contract"
             },
             {
                 input: "Please verify this token contract and check if it's legitimate",
-                expected: "verify_contract"
+                expected: "verify_token"
             },
             {
                 input: "Can you help me with my homework?",
@@ -33,7 +33,11 @@ async function testRouterAgentFunctionality() {
             },
             {
                 input: "Need a security review of my smart contract code",
-                expected: "audit_contract"
+                expected: "verify_contract"
+            },
+            {
+                input: "{\"chain\":\"Base\",\"serviceName\":\"verify_contract\",\"contractAddress\":\"0x28442822b156c348992fbb055070ddeb17dd5905\"}",
+                expected: "verify_contract"
             }
         ];
 
@@ -49,8 +53,8 @@ async function testRouterAgentFunctionality() {
         // Test agent offering mapping
         console.log("\n2. Testing agent offering mapping...");
         const agent_offering_mapping = {
-            audit_contract: "Sentry:wachAI",
-            verify_contract: "TokenSense:wachAI",
+            verify_contract: "Sentry:wachAI",
+            verify_token: "TokenSense:wachAI",
         };
 
         console.log("✅ Agent offering mapping configured:");
@@ -64,8 +68,7 @@ async function testRouterAgentFunctionality() {
             responded_to_request: false,
             delivered_work: false,
             routed_to_agent: "Sentry:wachAI",
-            routed_job_id: 12345,
-            routing_phase: "REQUEST_SENT",
+            routed_job_id: 12345,            routing_phase: "REQUEST_SENT",
             target_agent_name: "Sentry:wachAI",
             target_agent_address: "0x1234567890123456789012345678901234567890"
         };
@@ -76,7 +79,7 @@ async function testRouterAgentFunctionality() {
         console.log("\n🎉 Router Agent functionality test completed!");
         console.log("\nRouter Agent Features:");
         console.log("✅ Automatic job classification and routing");
-        console.log("✅ Support for Sentry (audit) and TokenSense (verification) agents");
+        console.log("✅ Support for Sentry (verify contract) and TokenSense (verify token) agents");
         console.log("✅ Job stage tracking with Redis");
         console.log("✅ Automatic response forwarding from target agents");
         console.log("✅ Error handling for failed routing");
