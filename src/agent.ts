@@ -15,6 +15,13 @@ dotenv.config();
 const agent_offering_mapping = {
     verify_contract: "Sentry:wachAI",
     verify_token: "TokenSense:wachAI",
+    erc4626_compliance_check: "Sentry:wachAI",
+}
+
+const offering_id_mapping = {
+    "verify_contract": 0,
+    "verify_token": 0,
+    "erc4626_compliance_check": 1,
 }
 
 interface HybridJobStage {
@@ -29,7 +36,31 @@ interface HybridJobStage {
 }
 
 // Cache for agents to avoid repeated lookups
-let agentCache: { [key: string]: any } = {};
+let agentCache: {
+    [key: string]: {
+        id: number;
+        name: string;
+        description: string;
+        jobOfferings: any[];
+        contractAddress: `0x${string}`;
+        twitterHandle: string;
+        walletAddress: `0x${string}`;
+        metrics: {
+            successfulJobCount: number;
+            successRate: number;
+            uniqueBuyerCount: number;
+            minsFromLastOnline: number;
+            isOnline: boolean;
+        } | undefined;
+        resource: {
+            name: string;
+            description: string;
+            url: string;
+            parameters?: Object;
+            id: number;
+        }[];
+    }
+} = {};
 let acpClient: AcpClient | null = null;
 
 // Initialize ACP client and cache agents
@@ -159,21 +190,31 @@ async function handleRequestPhase(acpClient: AcpClient, job: AcpJob, jobStages: 
 
         console.log(`Responding to job request ${job.id}: ${JSON.stringify(job.requirement)}`);
 
-        const requirements = job.requirement || "no requirements";
         const jobDescription = {
             service: job.name,
-            requirements: requirements,
+            
         }
-        console.log(`Job description: ${JSON.stringify(jobDescription)}`);
-        const { offering, message } = await createAgentResponseForACP(JSON.stringify(jobDescription) as string);
-
-        if (!offering) {
-            console.log('Rejecting job as agent is not able to provide the service', message);
-            await job.respond(false, message as string);
+        let requirements: any = job.requirement;
+        if (typeof requirements === "object" && requirements !== null) {
+            requirements.service = job.name;
+        } else if (typeof requirements === "string") {
+            requirements += `\nservice: ${job.name}`;
+        } else {
+            console.log(`Rejecting job as requirements are invalid`);
+            await job.respond(false, "Rejecting job as agent is not able to provide the service due to invalid requirements");
             jobStages.job_phase = "REJECTED";
             return;
         }
-        console.log(`I'm choosing this offering: ${offering} because ${message}`);
+        // console.log(`Job description: ${JSON.stringify(jobDescription)}`);
+        // const { offering, message } = await createAgentResponseForACP(JSON.stringify(jobDescription) as string);
+        const offering = job.name;
+        if (!offering) {
+            console.log(`Rejecting job as agent is not able to provide the service because I can't find any offering to fullfill`);
+            await job.respond(false, `Rejecting job as agent is not able to provide the service because I can't find any offering to fullfill`);
+            jobStages.job_phase = "REJECTED";
+            return;
+        }
+        console.log(`I'm choosing this offering: ${offering} because of job name : ${job.name}`);
         // Route to appropriate agent
         const agent_name = agent_offering_mapping[offering as keyof typeof agent_offering_mapping];
         console.log(`Routing job to ${agent_name}`);
@@ -187,8 +228,9 @@ async function handleRequestPhase(acpClient: AcpClient, job: AcpJob, jobStages: 
         }
 
         try {
-            const _offering = targetAgent.offerings[0];
-            console.log(`Target offering: ${_offering.name}:${targetAgent.name}, Requirements: ${requirements}`);
+            const offering_id = offering_id_mapping[offering as keyof typeof offering_id_mapping];
+            const _offering = targetAgent.jobOfferings[offering_id];
+            console.log(`Target offering: ${_offering.name}:${targetAgent.name}, Requirements: ${JSON.stringify(requirements)}`);
             if (!_offering) {
                 console.log(`No offerings found for target agent ${agent_name}`);
                 await job.respond(false, "Target agent has no offerings");

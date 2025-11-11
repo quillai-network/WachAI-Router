@@ -40,7 +40,7 @@ async function test() {
         console.log(`Found ${activeJobs.length} active jobs`);
 
         // if no active jobs, browse for new agents
-        if (activeJobs.length <5) {
+        if (activeJobs.length < 4) {
           console.log("No active jobs found, browsing for new agents...");
           // Browse available agents based on a keyword and cluster name
           const relevantAgents = await acpClient.browseAgents(
@@ -53,13 +53,13 @@ async function test() {
           console.log(`Found ${relevantAgents.length} relevant agents`);
           // console.log(relevantAgents)
           const relevantAgent = relevantAgents[0];
-          const offerings = relevantAgent.offerings[1];
-          console.log(offerings.name)
-          console.log(`Creating job for agent ${relevantAgent.name}`);
+          const offerings = relevantAgent.jobOfferings[2];
+          //console.log(offerings)
+          console.log(`Creating job for agent ${relevantAgent.name}: ${offerings.name}`);
           await offerings.initiateJob(
             {
               contractAddress: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-              chain: "ethereum"
+              chain: "ethereum",
             },
             process.env.BUYER_AGENT_WALLET_ADDRESS as `0x${string}`,
             //new Date(Date.now() + 1000 * 60 * 60 * 24) // expiredAt as last parameter
@@ -74,7 +74,7 @@ async function test() {
           console.log(`Processing job ${job.id} in phase: ${AcpJobPhases[job.phase]}`);
 
           // skip some pending jobs
-          if ([19215, 19211, 13982, 82030, 82430].includes(job.id)) {
+          if ([19215, 19211, 19938].includes(job.id)) {
             console.log(`Skipping job ${job.id} as it is pending`);
             continue;
           }
@@ -88,18 +88,18 @@ async function test() {
           if (job.phase === AcpJobPhases.NEGOTIATION) {
             const memo = job.memos.find((m) => m.nextPhase === AcpJobPhases.TRANSACTION);
             if (memo) {
-              console.log(`Paying for job ${job.id}: ${JSON.stringify(job.serviceRequirement)}`);
-              await job.pay(0.01, "Payment for token due diligence report");
+              console.log(`Paying for job ${job.id}: ${JSON.stringify(job.requirement)}`);
+              await job.pay("Payment for token due diligence report");
               console.log(`Successfully paid for job ${job.id}`);
             }
           }
 
           // Handle EVALUATION phase - evaluate the job
           if (job.phase === AcpJobPhases.EVALUATION && job.evaluatorAddress === process.env.BUYER_AGENT_WALLET_ADDRESS) {
-            // console.log(`Evaluating job ${job.id} with deliverable: ${JSON.stringify(job.deliverable)}`);
-            // console.log(`The response for the ${job.id}
-            //   ${JSON.stringify(job.deliverable)}
-            // `)
+            console.log(`Evaluating job ${job.id} with deliverable: ${JSON.stringify(job.deliverable)}`);
+            console.log(`The response for the ${job.id}
+              ${JSON.stringify(job.deliverable)}
+            `)
             await job.evaluate(true, "This is a test reasoning - job completed successfully");
             console.log(`Successfully evaluated job ${job.id}`);
           }
