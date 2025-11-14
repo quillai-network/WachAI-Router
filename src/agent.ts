@@ -1,5 +1,5 @@
 import { createAgentResponseForACP } from "./helpers/agent";
-import AcpClient, { AcpContractClient, AcpGraduationStatus, AcpJob, AcpJobPhases, AcpOnlineStatus } from "@virtuals-protocol/acp-node";
+import AcpClient, { AcpContractClientV2, AcpGraduationStatus, AcpJob, AcpJobPhases, AcpOnlineStatus } from "@virtuals-protocol/acp-node";
 import dotenv from "dotenv";
 import {
     getJobStage,
@@ -69,7 +69,7 @@ async function initializeAcpClient() {
         if (acpClient) return acpClient;
 
         acpClient = new AcpClient({
-            acpContractClient: await AcpContractClient.build(
+            acpContractClient: await AcpContractClientV2.build(
                 `0x${process.env.PRIVATE_KEY}` as `0x${string}`,
                 parseInt(process.env.ENTITY_ID as string),
                 process.env.AGENT_WALLET_ADDRESS as `0x${string}`,
@@ -374,7 +374,7 @@ async function handleTransactionPhase(acpClient: AcpClient, job: AcpJob, jobStag
 
         if (memo) {
             console.log(`Paying for job ${mapping.routed_job_id}: ${JSON.stringify(routedJob.requirement)}`);
-            await routedJob.pay("Payment for fullfilling the job");
+            await routedJob.payAndAcceptRequirement("Payment for fullfilling the job");
             console.log(`Successfully paid for job ${mapping.routed_job_id}`);
             jobStages.job_phase = "PAID";
         } else {

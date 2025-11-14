@@ -89,7 +89,7 @@ async function test() {
             const memo = job.memos.find((m) => m.nextPhase === AcpJobPhases.TRANSACTION);
             if (memo) {
               console.log(`Paying for job ${job.id}: ${JSON.stringify(job.requirement)}`);
-              await job.pay("Payment for token due diligence report");
+              await job.payAndAcceptRequirement("Payment for token due diligence report");
               console.log(`Successfully paid for job ${job.id}`);
             }
           }
