@@ -9,19 +9,24 @@ import {
     getJobMappingByRouted,
     loadAllJobMappings
 } from "./helpers/redis";
+import { AGENT_ADDRESS_MAPPING } from "../config";
 
 dotenv.config();
 
 const agent_offering_mapping = {
-    verify_contract: "Sentry:wachAI",
-    verify_token: "TokenSense:wachAI",
-    erc4626_compliance_check: "Sentry:wachAI",
+    verify_contract: "Sentry:WachAI",
+    audit_smart_contract: "Sentry:WachAI",
+    verify_token: "TokenSense:WachAI",
+    verify_address: "TokenSense:WachAI",
+    erc4626_audit: "Sentry:WachAI",
 }
 
 const offering_id_mapping = {
     "verify_contract": 0,
+    "Sentry:WachAI":0,
     "verify_token": 0,
-    "erc4626_compliance_check": 1,
+    "verify_address":0,
+    "erc4626_audit": 1,
 }
 
 interface HybridJobStage {
@@ -67,7 +72,11 @@ let acpClient: AcpClient | null = null;
 async function initializeAcpClient() {
     try {
         if (acpClient) return acpClient;
-
+        let network = process.env.NETWORK;
+        if (network !== "sandBox" && network !== "mainnet") {
+            network = "mainnet";
+        }
+        const agentAddressMapping = AGENT_ADDRESS_MAPPING[network as keyof typeof AGENT_ADDRESS_MAPPING];
         acpClient = new AcpClient({
             acpContractClient: await AcpContractClientV2.build(
                 `0x${process.env.PRIVATE_KEY}` as `0x${string}`,
@@ -78,23 +87,27 @@ async function initializeAcpClient() {
         });
 
         // Cache agents for better performance
+        const sentryAgent = agentAddressMapping["Sentry:WachAI"] as `0x${string}`;
+        const tokenSenseAgent = agentAddressMapping["TokenSense:WachAI"] as `0x${string}`;
+        console.log(`Sentry agent address: ${sentryAgent}`);
+        console.log(`TokenSense agent address: ${tokenSenseAgent}`);
         const [browseSentry, browseTokenSense] = await Promise.all([
-            acpClient.browseAgents("Sentry:wachAI", {
-                graduationStatus: AcpGraduationStatus.NOT_GRADUATED,
+            acpClient.browseAgents(sentryAgent, {
+                graduationStatus: AcpGraduationStatus.ALL,
                 onlineStatus: AcpOnlineStatus.ALL,
             }),
-            acpClient.browseAgents("TokenSense:wachAI", {
-                graduationStatus: AcpGraduationStatus.NOT_GRADUATED,
+            acpClient.browseAgents(tokenSenseAgent, {
+                graduationStatus: AcpGraduationStatus.ALL,
                 onlineStatus: AcpOnlineStatus.ALL,
             })
         ]);
 
         agentCache = {
-            "Sentry:wachAI": browseSentry[0],
-            "TokenSense:wachAI": browseTokenSense[0]
+            "Sentry:WachAI": browseSentry[0],
+            "TokenSense:WachAI": browseTokenSense[0]
         };
-
-        console.log(`ACP Client initialized for router agent: ${process.env.AGENT_WALLET_ADDRESS}`);
+        console.log(`ACP Client initialized for router agent: ${process.env.AGENT_WALLET_ADDRESS} on ${network}`);
+        console.log(`Cached agents: ${browseSentry[0].name} and ${browseTokenSense[0].name}`);
         return acpClient;
     } catch (error) {
         console.error("Error initializing ACP client:", error);

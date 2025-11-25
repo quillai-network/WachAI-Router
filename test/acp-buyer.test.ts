@@ -2,7 +2,7 @@ import * as readline from "readline";
 import dotenv from "dotenv";
 dotenv.config();
 
-import AcpClient, { AcpContractClient, AcpGraduationStatus, AcpJob, AcpJobPhases, AcpOnlineStatus } from "@virtuals-protocol/acp-node";
+import AcpClient, { AcpContractClientV2, AcpGraduationStatus, AcpJobPhases, AcpOnlineStatus } from "@virtuals-protocol/acp-node";
 
 function askQuestion(query: string): Promise<string> {
   const rl = readline.createInterface({
@@ -20,7 +20,7 @@ function askQuestion(query: string): Promise<string> {
 
 async function test() {
   try {
-    const acpContractClient = await AcpContractClient.build(
+    const acpContractClient = await AcpContractClientV2.build(
       `0x${process.env.BUYER_PRIVATE_KEY}` as `0x${string}`,
       parseInt(process.env.BUYER_ENTITY_ID as string),
       process.env.BUYER_AGENT_WALLET_ADDRESS as `0x${string}`,
