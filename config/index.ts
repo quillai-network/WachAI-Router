@@ -5,6 +5,6 @@ export const AGENT_ADDRESS_MAPPING = {
     },
     mainnet: {
         "Sentry:WachAI": "0xa05B167D74964f88310b0864AcB0EE9BE7b2A5c1",
-        "TokenSense:WachAI": "0x10122673DA4E2bFc3a69d54065e1a279697Bd4b0",
+        "TokenSense:WachAI": "0xd84A0d57D865Df857Aa8744004b826B29bB67A0D",
     },
 }
