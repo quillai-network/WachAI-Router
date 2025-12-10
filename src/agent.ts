@@ -1,5 +1,5 @@
 import { createAgentResponseForACP } from "./helpers/agent";
-import AcpClient, { AcpContractClientV2, AcpGraduationStatus, AcpJob, AcpJobPhases, AcpOnlineStatus } from "@virtuals-protocol/acp-node";
+import AcpClient, { AcpContractClient, AcpContractClientV2, AcpGraduationStatus, AcpJob, AcpJobPhases, AcpOnlineStatus } from "@virtuals-protocol/acp-node";
 import dotenv from "dotenv";
 import {
     getJobStage,
@@ -23,7 +23,7 @@ const agent_offering_mapping = {
 
 const offering_id_mapping = {
     "verify_contract": 0,
-    "Sentry:WachAI":0,
+    "audit_smart_contract":0,
     "verify_token": 0,
     "verify_address":0,
     "erc4626_audit": 1,
@@ -143,8 +143,27 @@ async function processJob(acpClient: AcpClient, activeJob: any, role: string) {
         }
 
         // Skip completed or rejected jobs
-        if (job.phase === AcpJobPhases.COMPLETED || job.phase === AcpJobPhases.REJECTED) {
+        if (job.phase === AcpJobPhases.COMPLETED) {
             console.log(`Skipping job ${jobId} as it is in phase: ${AcpJobPhases[job.phase]}`);
+            return;
+        }
+
+        if (job.phase === AcpJobPhases.REJECTED) {
+            console.log(`${jobId} has rejected, hence rejecting the original job`);
+            //await job.reject("Job rejected by the agent");
+            const originalJob = await acpClient.getJobById(originalJobId);
+            if (originalJob) {
+                if(originalJob.phase === AcpJobPhases.REQUEST) {
+                    await originalJob.reject("Job rejected by the worker agent, please check your input");
+                    console.log(`Original job ${originalJobId} is rejected`);
+                } else {
+                    console.log(`Original job ${originalJobId} is not in REQUEST phase, hence not rejecting`);
+                }
+            }
+            jobStages.job_phase = "REJECTED";
+            jobStages.responded_to_request = true;
+            jobStages.delivered_work = false;
+            await setJobStage(String(originalJobId), jobStages);
             return;
         }
 
@@ -461,6 +480,7 @@ async function handleAcpJobs() {
             try {
                 console.log("Polling for active jobs...");
                 const activeJobs = await acpClient.getActiveJobs();
+                const cancelledJobs = await acpClient.getCancelledJobs();
                 if (!activeJobs?.length) {
                     console.log("No active jobs found");
                     await new Promise(resolve => setTimeout(resolve, pollingInterval));
@@ -484,6 +504,20 @@ async function handleAcpJobs() {
 
                     await processJob(acpClient, activeJob, role);
                 });
+
+                const cancelledJobPromises = cancelledJobs.map(async (cancelledJob) => {
+                    const jobId = cancelledJob.id;
+                    if (cancelledJob.clientAddress === process.env.AGENT_WALLET_ADDRESS) {
+                        console.log(`Processing cancelled job ${jobId} as consumer`);
+                        await processJob(acpClient, cancelledJob, "consumer");
+                    } else {
+                        console.log(`Skipping job ${jobId} as the role is provider`);
+                        return;
+                    }
+                    
+                });
+
+                await Promise.allSettled(cancelledJobPromises);
 
                 // Wait for all jobs to be processed
                 await Promise.allSettled(jobPromises);

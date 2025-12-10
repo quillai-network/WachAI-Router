@@ -1,10 +1,6 @@
 import Redis from "ioredis";
 
-export const redis = new Redis({
-    host: process.env.REDIS_HOST || "localhost",
-    port: parseInt(process.env.REDIS_PORT || "6379"),
-    tls: {}
-});
+export const redis = new Redis(process.env.REDIS_URL as string);
 
 // Redis key prefix for processed job stages
 const JOB_STAGE_KEY_PREFIX = "processedJobStage:";
